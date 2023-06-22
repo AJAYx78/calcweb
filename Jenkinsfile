@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git url: 'https://github.com/rchidana/calcwebapp.git'    
+                git url: 'https://github.com/AJAYx78/calcweb.git'    
 		            echo "Code Checked-out Successfully!!";
             }
         }
@@ -32,7 +32,7 @@ pipeline {
 	stage('SonarQube analysis') {
             steps {
 		// Change this as per your Jenkins Configuration
-                withSonarQubeEnv('SonarQube') {
+                withSonarQubeEnv('sonar_token_2') {
                     bat 'mvn package sonar:sonar'
                 }
             }
